@@ -3,8 +3,10 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
         flex: 1,
-     // alignItems: 'center',
-      flexDirection: 'row'
+    //justifyContent: "space-between",
+    backgroundColor: "#fff",
+    //padding: 20,
+    //margin: 10
     },
     title: {
           fontSize: 24,
@@ -16,16 +18,6 @@ export default StyleSheet.create({
         width: 90,
         alignSelf: "center",
         margin: 30
-    },
-    logo1: {
-        flex: 1,
-        height:400,
-        width: 300,
-        alignSelf: "center",
-        marginTop: 10,
-        marginBottom:15,
-        marginLeft:30,
-        marginRight:30
     },
     input: {
       /*  height: 38,
@@ -44,17 +36,17 @@ export default StyleSheet.create({
 
     },
     button: {
-        backgroundColor: '#cd5c5c',
+        backgroundColor: '#1e90ff',
         marginLeft: 30,
         marginRight: 30,
-        marginTop: 50,
+        marginTop: 100,
         //height: 48,
-        borderRadius: 10,
+        borderRadius: 30,
         alignItems: "center",
         justifyContent: 'center',
-        padding: 15,
-        borderRadius: 15,
+        padding: 15
     },
+    
     buttonTitle: {
         color: 'white',
         fontSize: 16,
@@ -75,15 +67,7 @@ export default StyleSheet.create({
         fontSize: 16
     },
     text:{
-        fontWeight: 'bold',
-        color: "black",
-        fontSize: 16
-    },
-    text1:{
-        alignItems: "center",
-        fontWeight: 'bold',
-        color: "black",
-        fontSize: 16
+        fontWeight: 'bold'
     },
     userInfoSection: {
         paddingHorizontal : 30,
@@ -93,46 +77,29 @@ export default StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 10
     },
-    action:{
+     action:{
         flexDirection: 'row',
         justifyContent: "space-between",
-        marginTop: 15, 
-        marginBottom: 50,
+        marginTop: 30, 
+        //marginBottom: 50,
         //borderBottomWidth: 1,
         borderBottomColor: "#f2f2f2",
         paddingBottom: 5,
         marginLeft: 20,
         marginRight: 20,
-        padding: 50,
-        justifyContent: 'center',
+        padding: 25,
         //margin: 3
 
     },action1:{
-        flexDirection: 'row',
-        //justifyContent: "space-between",
-        marginTop: 30, 
-       // marginBottom: 50,
-        //borderBottomWidth: 1,
+        flexDirection: 'column-reverse',
+        flex:0.5,
+        marginTop: 100, 
+        marginBottom: 50,
+        borderBottomWidth: 1,
         borderBottomColor: "#f2f2f2",
         paddingBottom: 5,
-        marginLeft: 20,
-        marginRight: 20,
-       // padding: 10,
-        //margin: 3
-
-    },
-    action2:{
-        flexDirection: 'column',
-        //justifyContent: "space-between",
-        marginTop: 30, 
-       // marginBottom: 50,
-        //borderBottomWidth: 1,
-        borderBottomColor: "#f2f2f2",
-        paddingBottom: 5,
-        marginLeft: 20,
-        marginRight: 20,
-       // padding: 10,
-        //margin: 3
+        marginLeft: 50
+        
 
     }
 })

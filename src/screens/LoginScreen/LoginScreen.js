@@ -14,7 +14,9 @@ export default function LoginScreen({navigation}) {
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
   const responseListener = useRef();
-    
+  const onFooterLinkPress = () => {
+    navigation.navigate('Registration')
+}
    
 
     
@@ -57,8 +59,13 @@ export default function LoginScreen({navigation}) {
                             return;
                         }else{
                             
-                                this.registerForPushNotifications();
-                                navigation.navigate("UserProfileScreen");}
+                                registerForPushNotifications();
+                                if(uid =="XlbaMnY0X7QfXBf5hH8Yr6QzNVj2"){
+                                    navigation.navigate("Information")  
+                                }else{
+                                navigation.navigate("User Profile");}
+                            }
+                            
                          
                        
                                  
@@ -78,7 +85,10 @@ export default function LoginScreen({navigation}) {
             <KeyboardAwareScrollView
                 style={{ flex: 1, width: '100%' }}
                 keyboardShouldPersistTaps="always">
-                
+                <Image
+                    style={styles.logo}
+                    source={require('../../../assets/logo2.png')}
+                />
                 <TextInput
                     style={styles.input}
                     placeholder='E-mail'
@@ -103,7 +113,9 @@ export default function LoginScreen({navigation}) {
                     onPress={() => onLoginPress()}>
                     <Text style={styles.buttonTitle}>Log in</Text>
                 </TouchableOpacity>
-               
+                <View style={styles.footerView}>
+                    <Text style={styles.footerText}>Don't have an account? <Text onPress={onFooterLinkPress} style={styles.footerLink}>Sign up</Text></Text>
+                </View>
             </KeyboardAwareScrollView>
         </View>
     )

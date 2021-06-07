@@ -15,6 +15,7 @@ export default StyleSheet.create({
         alignSelf: "center",
         marginTop: 80,
         marginBottom: 30
+        
     },
     input: {
         height: 48,
@@ -31,7 +32,7 @@ export default StyleSheet.create({
         backgroundColor: '#cd5c5c',
         marginLeft: 30,
         marginRight: 30,
-        marginTop: 20,
+        marginTop: 30,
         height: 48,
         borderRadius: 10,
         alignItems: "center",
@@ -44,9 +45,8 @@ export default StyleSheet.create({
     },
     footerView: {
         flex: 1,
-        //alignItems: "center",
-        marginTop: 20,
-        marginLeft: 20
+        alignItems: "center",
+        marginTop: 20
     },
     footerText: {
         fontSize: 16,

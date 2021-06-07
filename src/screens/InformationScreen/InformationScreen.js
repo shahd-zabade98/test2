@@ -1,28 +1,24 @@
-import React, { useState,setState } from 'react';
-import { Image, Keyboard, Text, TextInput, TouchableOpacity,FlatList, View ,Button,Icon} from 'react-native';
+import React, { useState } from 'react';
+import { Image, Keyboard, Text, TextInput, TouchableOpacity, View ,Icon} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 import { firebase } from '../../../config';
-import * as MediaLibrary from 'expo-media-library';
-import { MaterialCommunityIcons,FontAwesome5,Ionicons,MaterialIcons} from '@expo/vector-icons';
-import * as  Notifications from 'expo-notifications';
-
-import AwesomeButton from 'react-native-really-awesome-button';
+import { FontAwesome , Entypo, MaterialIcons,MaterialCommunityIcons,FontAwesome5, Ionicons} from '@expo/vector-icons';
+import { requestPermissionsAsync } from 'expo-media-library';
 import { useEffect } from 'react/cjs/react.development';
-
-  
-export default function HomeStatusScreen({navigation}) {
-  const reference = firebase.database().ref('sensors/');
-  const [S3, setS3] = useState('');
-  const [S4, setS4] = useState('');
-  const [S5, setS5] = useState('');
-  const [S11, setS11] = useState('');
-  const [S9, setS9] = useState('');
-  const [S10, setS10] = useState('');
-  const [S12, setS12] = useState('');
-  const [S13, setS13] = useState('');
-  const [S14, setS14] = useState('');
-  const [S15, setS15] = useState('');
+import AwesomeButton from 'react-native-really-awesome-button';
+export default function InformationScreen({navigation}) {
+    const reference = firebase.database().ref('sensors/');
+    const [S3, setS3] = useState('');
+    const [S4, setS4] = useState('');
+    const [S5, setS5] = useState('');
+    const [S11, setS11] = useState('');
+    const [S9, setS9] = useState('');
+    const [S10, setS10] = useState('');
+    const [S12, setS12] = useState('');
+    const [S13, setS13] = useState('');
+    const [S14, setS14] = useState('');
+    const [S15, setS15] = useState('');
   useEffect(() =>{
     reference 
     .on('value', (snapshot) => {
@@ -51,39 +47,50 @@ export default function HomeStatusScreen({navigation}) {
      }else{
        setS15("Normal mode")
      }
-
     })
     
   },[]);
-  
-  const sendPushNotification = () => {
-    let response = fetch('https://exp.host/--/api/v2/push/send', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        to: 'ExponentPushToken[W-gasqP7l2vSV0O0hch9pX]',
-        sound: 'default',
-        title: 'Demo',
-        body: 'Demo notificaiton'
-      })
-    });
-  };
-    
-  const onSubmit = () =>{
-    navigation.navigate("ControlScreen");
-  }
 
-     return (
-        
 
-             <View style={styles.container }>
+
+
+
+
+
+
+
+    return(
+
+ <View style={styles.container }>
     <KeyboardAwareScrollView
         style={{ flex: 1, width: '100%' }}
         keyboardShouldPersistTaps="always">
-
+                
+                   
+                    <View style={styles.action2}>
+                    <FontAwesome name="user" size={24} color="black" />
+                    <Text style={styles.text}>   Shahd Zabade</Text>
+                  </View>
+                  <View style={styles.action2}>
+                  <Entypo name="location-pin" size={24} color="black" />
+                   
+                  <Text style={styles.text}>   Tulkarm , Biet Leed</Text>
+                     </View>
+                     <View style={styles.action2}>
+                     <Entypo name="phone" size={24} color="black" />
+                     <Text style={styles.text}>   0595407670</Text>
+                  </View>
+                  <View style={styles.action2}>
+                  <MaterialIcons name="family-restroom" size={24} color="black" />
+                  <Text style={styles.text}>   7</Text>
+                   </View>
+                   <View style={styles.action3}>
+                   <Text style={styles.text}>   Home plan:</Text>
+                   <Image
+                    style={styles.logo1}
+                    source={require('../../../assets/2.gif')}
+                />
+                </View>
                
                    
                 <View >
@@ -136,16 +143,13 @@ export default function HomeStatusScreen({navigation}) {
                 <View>
                 <Text style={styles.text}>  Mode : {S15}</Text>
                 </View>
-                <View style={styles.action} >
-                <AwesomeButton progress textColor="#fffff0" width={120} type="primaryFlat" backgroundColor="#cd5c5c" backgroundActive="rgba(0,0,0,0)" borderRadius={30}  onPress={(next) => { sendPushNotification() 
-                    next(); }}> Send Nonification </AwesomeButton>
-                    <AwesomeButton progress textColor="#fffff0" width={120} type="primaryFlat" backgroundColor="#cd5c5c" backgroundActive="rgba(0,0,0,0)" borderRadius={30}  onPress={(next) => { onSubmit() 
-                    next(); }}> Control </AwesomeButton>
-                </View>
+                  
+                 
                   
                 </KeyboardAwareScrollView>
                 </View>
                
-  );
-}
 
+
+    )
+}

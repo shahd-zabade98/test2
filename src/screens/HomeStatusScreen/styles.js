@@ -74,14 +74,35 @@ export default StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 10
     },
-     action:{
+    action:{
         flexDirection: 'row',
-        marginTop: 10, 
-        marginBottom: 10,
-        borderBottomWidth: 1,
+        justifyContent: "space-between",
+        marginTop: 0, 
+        //marginBottom: 50,
+        //borderBottomWidth: 1,
         borderBottomColor: "#f2f2f2",
         paddingBottom: 5,
-        marginLeft: 20
+        marginLeft: 20,
+        marginRight: 20,
+        padding: 25,
+        //margin: 3
 
+    },action1:{
+        flexDirection: 'row',
+        //justifyContent: "space-between",
+        marginTop: 5, 
+       marginBottom: 10,
+        //borderBottomWidth: 1,
+        borderBottomColor: "#f2f2f2",
+        paddingBottom: 5,
+        marginLeft: 60,
+        marginRight: 20,
+       // padding: 10,
+        //margin: 3
+
+    },b1:{
+        alignItems: 'center',
+      flexDirection: 'row',
+      marginLeft: 100
     }
 })

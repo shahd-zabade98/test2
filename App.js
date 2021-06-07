@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { LoginScreen,RegistrationScreen,UserProfileScreen,HomeStatusScreen} from './src/screens'
+import { LoginScreen,RegistrationScreen,UserProfileScreen,HomeStatusScreen,InformationScreen,ControlScreen,MainScreen,RegistrationScreen1, UsersScreen} from './src/screens'
 import {decode, encode} from 'base-64'
 
 
@@ -21,13 +21,16 @@ export default function App(){
   
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='RegistrationScreen'>
-    
-      <Stack.Screen name="LoginScreen"  component={LoginScreen} />
-      <Stack.Screen name="RegistrationScreen"  component={RegistrationScreen} />
-      <Stack.Screen name="UserProfileScreen"  component={UserProfileScreen} />
-      <Stack.Screen name="HomeStatusScreen"  component={HomeStatusScreen} />
-          
+      <Stack.Navigator initialRouteName='Registration'>
+      <Stack.Screen name="Registration"  component={MainScreen} />
+      <Stack.Screen name="Login" title="Login" component={LoginScreen} />
+      <Stack.Screen name="Sign up as home owner"  component={RegistrationScreen} />
+      <Stack.Screen name="User Profile" title="User Profile" component={UserProfileScreen} />
+      <Stack.Screen name="Home Status" title="Home Status" component={HomeStatusScreen} />
+      <Stack.Screen name="ControlScreen" title="Control your house" component={ControlScreen} />
+      <Stack.Screen name="Sign up as firefighter"  component={RegistrationScreen1} />   
+      <Stack.Screen name="Users"  component={UsersScreen} /> 
+      <Stack.Screen name="Information"  component={InformationScreen} /> 
     </Stack.Navigator>
        
       

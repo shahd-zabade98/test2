@@ -5,20 +5,18 @@ import styles from './styles';
 import { firebase } from '../../../config';
 import { FontAwesome , Entypo, MaterialIcons } from '@expo/vector-icons';
 import { requestPermissionsAsync } from 'expo-media-library';
-
+import AwesomeButton from 'react-native-really-awesome-button';
 export default function UserProfileScreen({navigation}) {
   //const entityRef = firebase.firestore().collection('entities');
-   // let Infoo = route.params;
+    //let Infoo = route.params;
    /* entityRef.get()
     .then((querySnapshot) =>{
         querySnapshot.forEach()
     })*/
     const onHome = () => {
-      navigation.navigate('HomeStatusScreen')
- }
-  /*const onControl = () => {
-    navigation.navigate('Control')
-}*/
+      navigation.navigate('Home Status')
+  }
+  
     
 
   /* async componentDidMount() {
@@ -52,20 +50,20 @@ export default function UserProfileScreen({navigation}) {
                 />
                    
                     <View style={styles.action1}>
-                   
+                    <FontAwesome name="user" size={24} color="black" />
                     <Text style={styles.text}>   Shahd Zabade</Text>
                   </View>
                   <View style={styles.action1}>
-                  
+                  <Entypo name="location-pin" size={24} color="black" />
                    
                   <Text style={styles.text}>   Tulkarm , Biet Leed</Text>
                      </View>
                      <View style={styles.action1}>
-                     
+                     <Entypo name="phone" size={24} color="black" />
                      <Text style={styles.text}>   0595407670</Text>
                   </View>
                   <View style={styles.action1}>
-                  
+                  <MaterialIcons name="family-restroom" size={24} color="black" />
                   <Text style={styles.text}>   7</Text>
                    </View>
                    <View style={styles.action2}>
@@ -76,16 +74,9 @@ export default function UserProfileScreen({navigation}) {
                 />
                 </View>
                    <View style={styles.action}>
-                   <TouchableOpacity style={styles.button} onPress={() => onHome ()}>
-                    <Text style={styles.buttonTitle}>Home Status</Text>
-                </TouchableOpacity>
-               
+                   <AwesomeButton progress textColor="#fffff0" width={120} type="primaryFlat" backgroundColor="#cd5c5c" backgroundActive="rgba(0,0,0,0)" borderRadius={30}  onPress={(next) => { onHome() 
+                    next(); }}> Home Status </AwesomeButton>
                 
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => this.sendPushNotification()}>
-                    <Text style={styles.buttonTitle}>    notification    </Text>
-                </TouchableOpacity>
                 </View>
                  </KeyboardAwareScrollView>
             </View> 
@@ -94,12 +85,9 @@ export default function UserProfileScreen({navigation}) {
 
 
 
-       /* <FontAwesome name="user" size={24} color="black" />
-        <Entypo name="location-pin" size={24} color="black" />
-        <Entypo name="phone" size={24} color="black" />
-        <MaterialIcons name="family-restroom" size={24} color="black" />
 
-      */
+
+
 
 
 
