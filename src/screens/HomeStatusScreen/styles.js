@@ -77,14 +77,14 @@ export default StyleSheet.create({
     action:{
         flexDirection: 'row',
         justifyContent: "space-between",
-        marginTop: 0, 
+        marginTop: 5, 
         //marginBottom: 50,
         //borderBottomWidth: 1,
         borderBottomColor: "#f2f2f2",
-        paddingBottom: 5,
+        paddingBottom: 10,
         marginLeft: 20,
         marginRight: 20,
-        padding: 25,
+        padding: 2,
         //margin: 3
 
     },action1:{

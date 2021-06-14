@@ -46,12 +46,14 @@ export default function HomeStatusScreen({navigation}) {
       console.log(words[12]);
       setS14(words[13]);
       console.log(words[13]);
-     if(S14==1){
-       setS15("Security mode")
+     if(words[13]=="1"){
+       setS15("  Security mode")
      }else{
-       setS15("Normal mode")
+       setS15("  Normal mode")
      }
-
+     if(words[2] >= "120"){
+      sendPushNotification1();
+     }
     })
     
   },[]);
@@ -64,10 +66,25 @@ export default function HomeStatusScreen({navigation}) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        to: 'ExponentPushToken[W-gasqP7l2vSV0O0hch9pX]',
+        to: 'ExponentPushToken[GipyauD5j0_Yx-YgtQCyif]',
         sound: 'default',
-        title: 'Demo',
-        body: 'Demo notificaiton'
+        title: 'Fire alarm',
+        body: 'House with ID 22 is asking for help!'
+      })
+    });
+  };
+  const sendPushNotification1 = () => {
+    let response = fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        to: 'ExponentPushToken[GipyauD5j0_Yx-YgtQCyif]',
+        sound: 'default',
+        title: 'Fire alarm',
+        body: 'House with ID 22 is asking for help!'
       })
     });
   };

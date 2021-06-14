@@ -42,7 +42,7 @@ export default function InformationScreen({navigation}) {
       console.log(words[12]);
       setS14(words[13]);
       console.log(words[13]);
-     if(S14==1){
+     if(words[13]==1){
        setS15("Security mode")
      }else{
        setS15("Normal mode")
