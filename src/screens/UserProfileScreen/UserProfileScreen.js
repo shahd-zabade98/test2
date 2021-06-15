@@ -14,7 +14,8 @@ export default function UserProfileScreen({navigation}) {
         querySnapshot.forEach()
     })*/
     const onHome = () => {
-      navigation.navigate('Home Status')
+      navigation.navigate('Home Status');
+      
   }
   
     

@@ -23,6 +23,23 @@ export default function HomeStatusScreen({navigation}) {
   const [S13, setS13] = useState('');
   const [S14, setS14] = useState('');
   const [S15, setS15] = useState('');
+
+ /* const sendPushNotification1 = () => {
+    let response = fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        to: 'ExponentPushToken[GipyauD5j0_Yx-YgtQCyif]',
+        sound: 'default',
+        title: 'Fire alarm',
+        body: 'House with ID 22 is asking for help!'
+      })
+    });
+    console.log(S3);
+  };*/
   useEffect(() =>{
     reference 
     .on('value', (snapshot) => {
@@ -51,8 +68,22 @@ export default function HomeStatusScreen({navigation}) {
      }else{
        setS15("  Normal mode")
      }
-     if(words[2] >= "120"){
-      sendPushNotification1();
+     if(words[2] > "150"){
+      let response = fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        to: 'ExponentPushToken[TMa1A3MVLPMApL7QQs0xHV]',
+        sound: 'default',
+        title: 'Fire alarm',
+        body: 'The house is asking for help!'
+      })
+    });
+
+
      }
     })
     
@@ -73,21 +104,7 @@ export default function HomeStatusScreen({navigation}) {
       })
     });
   };
-  const sendPushNotification1 = () => {
-    let response = fetch('https://exp.host/--/api/v2/push/send', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        to: 'ExponentPushToken[GipyauD5j0_Yx-YgtQCyif]',
-        sound: 'default',
-        title: 'Fire alarm',
-        body: 'House with ID 22 is asking for help!'
-      })
-    });
-  };
+  
     
   const onSubmit = () =>{
     navigation.navigate("ControlScreen");
